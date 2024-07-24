@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.determent.apofiz_sample"
+    namespace = "com.determent.apofiz_sample.android"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.determent.apofiz_sample"
+        applicationId = "com.determent.apofiz_sample.android"
         minSdk = 34
         targetSdk = 34
         versionCode = 1
@@ -24,16 +24,24 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
 dependencies {
     implementation(project(":common")) //or projects.common
+
+    // Retrofit
+    implementation(libs.squareup.retrofit2)
+    implementation(libs.squareup.retrofit2.gson)
+
+    // OkHttp (Engine Http)
+    implementation(libs.squareup.okhttp3)
+    implementation(libs.squareup.okhttp3.logging)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

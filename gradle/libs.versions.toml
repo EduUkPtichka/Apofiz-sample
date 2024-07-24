@@ -4,7 +4,13 @@
 agp = "8.2.0"
 kotlinPlugin = "1.9.20"
 
+# --------- Jetbrains Version ----------
 kotlin = "1.9.20"
+
+# --------- Lib Version Android --------
+okhttp3 = "4.12.0"
+retrofit2 = "2.11.0"
+
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -15,6 +21,17 @@ activity = "1.9.0"
 constraintlayout = "2.1.4"
 
 [libraries]
+# --------- Kotlin Coroutine ---------
+jetbrains-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin" }
+
+# --------- Data layer ---------
+squareup-retrofit2 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit2" }
+squareup-retrofit2-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit2" }
+
+# Engine OkHttp
+squareup-okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3" }
+squareup-okhttp3-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp3" }
+
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -25,8 +42,9 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
 [plugins]
+jetbrains-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlinPlugin" }
+jetbrains-kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlinPlugin" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
-jetbrains-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlinPlugin" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
