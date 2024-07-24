@@ -20,4 +20,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Apofiz-sample"
+
 include(":app")
+include(":common")

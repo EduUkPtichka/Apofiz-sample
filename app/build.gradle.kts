@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
 
@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":common")) //or projects.common
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
