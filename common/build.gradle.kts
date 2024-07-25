@@ -53,7 +53,7 @@ kotlin {
                 implementation(libs.jetbrains.coroutines.android)
 
                 // Data
-                implementation(libs.ktor.client.okhttp)
+                api(libs.ktor.client.okhttp)
                 implementation(libs.squareup.okhttp3)
             }
         }

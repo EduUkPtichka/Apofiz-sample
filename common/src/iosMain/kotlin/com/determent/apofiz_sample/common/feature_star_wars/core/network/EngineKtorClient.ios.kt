@@ -4,3 +4,8 @@ import io.ktor.client.HttpClient
 
 actual val ktorClientEngine: HttpClient
     get() = TODO("Not yet implemented")
+
+actual object EngineKtorClient {
+    actual val engineKtorClient: HttpClient
+        get() = TODO("Not yet implemented")
+}

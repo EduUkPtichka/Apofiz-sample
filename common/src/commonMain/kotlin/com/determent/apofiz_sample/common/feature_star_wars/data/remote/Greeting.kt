@@ -1,23 +1,22 @@
 package com.determent.apofiz_sample.common.feature_star_wars.data.remote
 
+import com.determent.apofiz_sample.common.feature_star_wars.core.network.EngineKtorClient
 import de.jensklingenberg.ktorfit.converter.CallConverterFactory
 import de.jensklingenberg.ktorfit.converter.FlowConverterFactory
 import de.jensklingenberg.ktorfit.ktorfit
-import io.ktor.client.HttpClient
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 val ktorfit = ktorfit {
     baseUrl(StarWarsApi.baseUrl)
-    httpClient(HttpClient {
-
-    })
+    httpClient(EngineKtorClient.engineKtorClient)
     converterFactories(
         FlowConverterFactory(),
         CallConverterFactory()
     )
 }
+
 
 val starWarsApi = ktorfit.createStarWarsApi()
 
