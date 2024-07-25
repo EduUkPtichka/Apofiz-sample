@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.determent.apofiz_sample.android.feature_home.data.remote.FakeStoreApi
+import com.determent.apofiz_sample.common.feature_star_wars.core.network.EngineOkHttpClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -45,13 +46,13 @@ class MainActivity : AppCompatActivity() {
             level = HttpLoggingInterceptor.Level.BASIC
         }
 
-        val okHttpClientBaseFakeStoreApi = OkHttpClient.Builder()
-            .addInterceptor(httpLoggingInterceptor)
-            .build()
+//        val okHttpClientBaseFakeStoreApi = OkHttpClient.Builder()
+//            .addInterceptor(httpLoggingInterceptor)
+//            .build()
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://fakestoreapi.com")
-            .client(okHttpClientBaseFakeStoreApi)
+            .client(EngineOkHttpClient.okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
